@@ -1,28 +1,16 @@
 public class Solution {
-    private boolean isPerfectSquare(int n) {
-        int root = (int)Math.sqrt(n);
-        if(root * root == n) 
-            return true;
-        return false;
-    }
     public int numSquares(int n) {
-        if(isPerfectSquare(n))
-            return 1;
-        
-        List<Integer> list = new ArrayList<>();
         int[] dp = new int[n + 1];
-        dp[1] = 1;
+        Arrays.fill(dp, Integer.MAX_VALUE);
         
-        for(int i = 2; i <= n; i++) {
-            if(isPerfectSquare(i)) {
-                dp[i] = 1;
-                continue;
+        for(int i = 1; i * i <= n; i++) {
+            dp[i * i] = 1;
+        }
+        
+        for(int i = 1; i <= n; i++) {
+            for(int j = 1; i + j * j <= n; j++) {
+                dp[i + j * j] = Math.min(dp[i] + 1, dp[i + j * j]);
             }
-            int min = Integer.MAX_VALUE;
-            for(int j = 1; j < i / j; j++) {
-                min = Math.min(dp[i - j * j] + 1, min);
-            }
-            dp[i] = min;
         }
         
         return dp[n];
