@@ -1,6 +1,7 @@
 public class Solution {
     int[] dx = {1, -1, 0, 0};
     int[] dy = {0, 0, 1, -1};
+    // 1. BFS
     public void solve(char[][] board) {
         if(board == null || board.length == 0 || board[0] == null || board[0].length == 0)
             return;
@@ -53,4 +54,47 @@ public class Solution {
             this.y = y;
         }
     }
+    
+    // 2. Union Find To Do
+    // public void solve(char[][] board) { 
+    //     if(board == null || board.length == 0 || board[0] == null || board[0].length == 0)
+    //         return;
+    //     int m = board.length;
+    //     int n = board[0].length;
+    //     UnionFind uf = new UnionFind();
+    //     for(int i = 0; i < m; i++) {
+    //         for(int j = 0; j < n; j++) {
+    //             if(board[i][j] == 'O') {
+    //                 uf.add(i * n + j);
+    //             }
+                    
+    //         }
+    //     }
+    // }
+    
+    // class UnionFind {
+    //     HashMap<Integer, Integer> father = new HashMap<>();
+        
+    //     public void add(int x) {
+    //         father.put(x, x);
+    //     }
+        
+    //     // can be optimized
+    //     public int find(int x) {
+    //         int parent = father.get(x);
+    //         while(parent != father.get(parent)) {
+    //             parent = father.get(parent);
+    //         }
+    //         return parent;
+    //     }
+        
+    //     public void union(int x, int y) {
+    //         int fa_x = find(x);
+    //         int fa_y = find(y);
+    //         if(fa_x != fa_y) {
+    //             father.put(fa_x, fa_y);
+    //         }
+    //     }
+        
+    // }
 }
