@@ -21,13 +21,11 @@ public class Solution {
         
         // Step 3: Connect the neighbors
         for(UndirectedGraphNode n : nodes) {
-            List<UndirectedGraphNode> neighbors = n.neighbors;
             UndirectedGraphNode copy = map.get(n);
-            List<UndirectedGraphNode> copyNeighbors = new ArrayList<>();
-            for(UndirectedGraphNode neighbor : neighbors) {
-                copyNeighbors.add(map.get(neighbor));
+
+            for(UndirectedGraphNode neighbor : n.neighbors) {
+                copy.neighbors.add(map.get(neighbor));
             }
-            copy.neighbors = copyNeighbors;
         }
         
         return map.get(node);
