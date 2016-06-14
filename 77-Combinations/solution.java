@@ -6,8 +6,8 @@ public class Solution {
         List<Integer> tmp = new ArrayList<>();
         dfs(ans, tmp, n, 1, k);
         return ans;
-        
     }
+    
     public void dfs(List<List<Integer>> ans, List<Integer> tmp, int n, int pos, int k) {
         if(tmp.size() == k) {
             ans.add(new ArrayList<Integer>(tmp));
@@ -21,6 +21,4 @@ public class Solution {
         }
         
     }
-    
-    
 }
