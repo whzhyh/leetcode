@@ -1,6 +1,16 @@
 public class Solution {
-    // you need treat n as an unsigned value
-    public int reverseBits(int n) {
+    // Method 2
+     public int reverseBits(int n) {
+        int reversed = 0;
+        for (int i = 0; i < 32; i++) {
+            reversed = (reversed << 1) | (n & 1);
+            n = (n >> 1);
+        }
+        return reversed;
+    }
+    
+    // Method 1: Just like reversing a string
+    public int reverseBits1(int n) {
         int left = 0, right = 31;
         while(left < right) {
             boolean isLeftOne = getBit(n, left);
