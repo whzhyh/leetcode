@@ -1,4 +1,5 @@
 public class Solution {
+    // Separate the nums into two groups.
     public int[] singleNumber(int[] nums) {
         int[] result = new int[2];
         int xor = 0;
