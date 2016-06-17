@@ -1,6 +1,6 @@
 public class Solution {
     // Two Pointers
-    public int[] intersection(int[] nums1, int[] nums2) { 
+    public int[] intersection2(int[] nums1, int[] nums2) { 
         if(nums1 == null || nums2 == null)
             return null;
         HashSet<Integer> ans = new HashSet<>();
@@ -49,7 +49,7 @@ public class Solution {
     } 
     
     // HashSet
-    public int[] intersection2(int[] nums1, int[] nums2) {
+    public int[] intersection(int[] nums1, int[] nums2) {
         // Write your code here
         if(nums1 == null || nums2 == null)
             return new int[0];
