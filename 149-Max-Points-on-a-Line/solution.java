@@ -12,9 +12,6 @@ public class Solution {
         if(points == null || points.length == 0)
             return 0;
             
-        if(points.length <= 2)
-            return points.length;
-            
         HashMap<Float, Integer> map = new HashMap<>();
         int ans = 0;
         for(int i = 0; i < points.length; i++) {
