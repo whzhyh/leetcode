@@ -8,6 +8,8 @@
  * }
  */
 public class Solution {
+    
+    // O(n^2)
     public int maxPoints(Point[] points) {
         if(points == null || points.length == 0)
             return 0;
