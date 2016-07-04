@@ -29,8 +29,8 @@ public class Solution {
                     }    
                 }
                 
-                if(board[i/3*3 + j/3][j%3 + i%3*3] != '.') {  
-                    char c = board[i/3*3 + j/3][j%3 + i%3*3];
+                if(board[i/3*3 + j/3][i%3*3 + j%3] != '.') {  
+                    char c = board[i/3*3 + j/3][i%3*3 + j%3];
                     if(square.contains(c)) {
                         return false;
                     } else {
