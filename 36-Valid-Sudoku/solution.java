@@ -1,8 +1,8 @@
 public class Solution {
     public boolean isValidSudoku(char[][] board) {
-        Set<Integer> row = new HashSet<>();
-        Set<Integer> column = new HashSet<>();
-        Set<Integer> square = new HashSet<>();
+        Set<Character> row = new HashSet<>();
+        Set<Character> column = new HashSet<>();
+        Set<Character> square = new HashSet<>();
         
         for(int i = 0; i < 9; i++) {
             row.clear();
@@ -12,7 +12,7 @@ public class Solution {
             for(int j = 0; j < 9; j++) {
                 
                 if(board[i][j] != '.') {
-                    int a = board[i][j] - '0';
+                    char a = board[i][j];
                     if(row.contains(a)) {
                         return false;
                     } else {
@@ -21,7 +21,7 @@ public class Solution {
                 }
                 
                 if(board[j][i] != '.') { 
-                    int b = board[j][i] - '0';
+                    char b = board[j][i];
                     if(column.contains(b)) {
                         return false;
                     } else {
@@ -30,7 +30,7 @@ public class Solution {
                 }
                 
                 if(board[i/3*3 + j/3][j%3 + i%3*3] != '.') {  
-                    int c = board[i/3*3 + j/3][j%3 + i%3*3] - '0';
+                    char c = board[i/3*3 + j/3][j%3 + i%3*3];
                     if(square.contains(c)) {
                         return false;
                     } else {
