@@ -5,9 +5,9 @@ public class Solution {
         Set<Integer> square = new HashSet<>();
         
         for(int i = 0; i < 9; i++) {
-            row = new HashSet<>();
-            column = new HashSet<>();
-            square = new HashSet<>();
+            row.clear();
+            column.clear();
+            square.clear();
             
             for(int j = 0; j < 9; j++) {
                 
