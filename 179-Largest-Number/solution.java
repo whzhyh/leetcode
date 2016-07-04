@@ -2,6 +2,7 @@ public class Solution {
     public String largestNumber(int[] nums) {
         if(nums == null || nums.length == 0)
             return "";
+            
         Integer[] nums2 = new Integer[nums.length];
         for(int i = 0; i < nums.length; i++) {
             nums2[i] = nums[i];
