@@ -1,13 +1,6 @@
 public class Solution {
     public boolean isValidSudoku(char[][] board) {
-        if(board == null || board.length == 0)
-            return false;
-            
         int m = board.length, n = board[0].length;
-        
-        if(m != n)
-            return false;
-            
         HashSet<Character> row = new HashSet<Character>();
         HashSet<Character> column = new HashSet<Character>();
         HashSet<Character> cube = new HashSet<Character>();
