@@ -11,9 +11,7 @@ public class Solution {
         while(i <= j) {
             char ci = num.charAt(i);
             char cj = num.charAt(j);
-            if(!map.containsKey(ci))
-                return false;
-            if(cj != map.get(ci))
+            if(!map.containsKey(ci) || cj != map.get(ci))
                 return false;
             i++;
             j--;
