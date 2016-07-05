@@ -5,8 +5,8 @@ public class Solution {
         if(b == 0)
             return a;
             
-        int sum = a^b;
-        int carry = (a&b)<<1;
+        int sum = a^b; // find the different digits;
+        int carry = (a&b)<<1; // find the same digits, and shift it to right by 1.
         
         return getSum(sum, carry);
     }
