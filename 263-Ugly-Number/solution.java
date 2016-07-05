@@ -15,7 +15,6 @@ public class Solution {
             num /= 2;
         }
         
-        
         return num == 1;
     }
 }
