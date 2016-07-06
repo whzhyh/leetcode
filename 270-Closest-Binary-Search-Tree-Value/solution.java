@@ -10,15 +10,9 @@
 public class Solution {
     public int closestValue(TreeNode root, double target) { 
         TreeNode n = target > root.val ? root.right : root.left;
-        if(n == null)
-            return root.val;
+        if(n == null) return root.val;
         int closest = closestValue(n, target);
-        
-        if(Math.abs(root.val - target) < Math.abs(closest - target)) {
-            return root.val;
-        } else {
-            return closest;
-        }
+        return Math.abs(root.val - target) < Math.abs(closest - target) ? root.val : closest;
     }
     
     public int closestValue2(TreeNode root, double target) {
