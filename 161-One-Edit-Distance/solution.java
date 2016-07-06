@@ -10,8 +10,6 @@ public class Solution {
             for(int i = 0; i < m; i++) {
                 if(s.charAt(i) != t.charAt(i)) {
                     count++;
-                    if(count > 1)
-                        return false;
                 }
             }
             return count == 1;
