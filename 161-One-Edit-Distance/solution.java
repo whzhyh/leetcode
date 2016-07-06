@@ -22,10 +22,14 @@ public class Solution {
     }
     // length of s > t
     private boolean isDel(String s, String t) {
-        for(int i = 0; i < s.length(); i++) {
-            if((s.substring(0, i) + s.substring(i + 1, s.length())).equals(t))
-                return true;
+        int i = 0, m = s.length() - 1, n = t.length() - 1;
+        while(i < t.length() && s.charAt(i) == t.charAt(i)) {
+            i++;
         }
-        return false;
+        while(n >= 0 && s.charAt(m) == t.charAt(n)) {
+            m--;
+            n--;
+        }
+        return i == m;
     }
 }
