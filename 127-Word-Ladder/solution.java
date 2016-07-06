@@ -2,8 +2,6 @@ public class Solution {
     
     // BFS
     public int ladderLength(String beginWord, String endWord, Set<String> wordList) {
-        
-        // wordList.add(beginWord);
         wordList.add(endWord);
         
         Queue<String> q = new LinkedList<String>();
@@ -21,7 +19,8 @@ public class Solution {
                 String str = q.poll();
                 if(str.equals(endWord))
                     return len;
-                Set<String> possibles = getPossibles(str, wordList);
+                    
+                List<String> possibles = getPossibles(str, wordList);
                 for(String word : possibles) {
                     if(!used.contains(word)) {
                         q.add(word);
@@ -33,8 +32,8 @@ public class Solution {
         return 0;
     }
     
-    public Set<String> getPossibles(String str, Set<String> dic) {
-        Set<String> ans = new HashSet<>();
+    public List<String> getPossibles(String str, Set<String> dic) {
+        List<String> ans = new ArrayList<>();
         int len = str.length();
         if(len == 0)
             return ans;
