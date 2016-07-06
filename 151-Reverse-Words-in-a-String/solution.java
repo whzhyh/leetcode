@@ -1,5 +1,5 @@
 public class Solution {
-    public String reverseWords(String s) {
+    public String reverseWords2(String s) {
         String[] parts = s.trim().split("\\s+");
         String out = "";
         for (int i = parts.length - 1; i > 0; i--) {
@@ -8,7 +8,7 @@ public class Solution {
         return out + parts[0];
     }
     
-    public String reverseWords2(String s) {
+    public String reverseWords(String s) {
         s = s.trim();
         int len = s.length();
         if(len == 0)
@@ -28,18 +28,9 @@ public class Solution {
             i = j;
         }
         
-        int start = 0, end = list.size() - 1;
-        while(start < end) {
-            String tmp = list.get(start);
-            list.set(start, list.get(end));
-            list.set(end, tmp);
-            start++;
-            end--;
-        }
         StringBuilder sb = new StringBuilder();
-        for(String str : list) {
-            
-            sb.append(str);
+        for(int i = list.size() - 1; i >= 0; i--) {
+            sb.append(list.get(i));
             sb.append(" ");
         }
         sb.deleteCharAt(sb.length() - 1);
