@@ -15,13 +15,11 @@ public class Solution {
             return s;
         List<String> list = new ArrayList<>();
         for(int i = 0; i < s.length(); i++) {
-            char start = s.charAt(i);
-            if(start == ' ')
+            if(s.charAt(i) == ' ')
                 continue;
             int j = i;
             for(; j < s.length(); j++) {
-                char end = s.charAt(j);
-                if(end == ' ')
+                if(s.charAt(j) == ' ')
                     break;
             }
             list.add(s.substring(i, j));
