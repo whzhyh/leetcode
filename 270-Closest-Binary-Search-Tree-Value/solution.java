@@ -8,7 +8,20 @@
  * }
  */
 public class Solution {
-    public int closestValue(TreeNode root, double target) {
+    public int closestValue(TreeNode root, double target) { 
+        TreeNode n = target > root.val ? root.right : root.left;
+        if(n == null)
+            return root.val;
+        int closest = closestValue(n, target);
+        
+        if(Math.abs(root.val - target) < Math.abs(closest - target)) {
+            return root.val;
+        } else {
+            return closest;
+        }
+    }
+    
+    public int closestValue2(TreeNode root, double target) {
         List<Integer> list = new ArrayList<>();
         inorder(root, list);
         
@@ -36,6 +49,5 @@ public class Solution {
         inorder(root.left, list);
         list.add(root.val);
         inorder(root.right, list);
-        
     }
 }
