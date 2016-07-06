@@ -3,7 +3,7 @@ public class Solution {
     // BFS
     public int ladderLength(String beginWord, String endWord, Set<String> wordList) {
         
-        wordList.add(beginWord);
+        // wordList.add(beginWord);
         wordList.add(endWord);
         
         Queue<String> q = new LinkedList<String>();
