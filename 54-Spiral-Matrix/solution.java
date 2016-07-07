@@ -3,29 +3,39 @@ public class Solution {
         List<Integer> ans = new ArrayList<>();
         if(matrix == null || matrix.length == 0 || matrix[0].length == 0)
             return ans;
-        int m = matrix.length;
-        int n = matrix[0].length;
-        boolean[][] visited = new boolean[m][n];
-        int[][] directions = {{0, 1}, {1, 0}, {0, -1}, {-1, 0}};
+
+        int rowStart = 0;
+        int rowEnd = matrix.length - 1;
+        int colStart = 0;
+        int colEnd = matrix[0].length - 1;
         
         int i = 0, j = 0;
-        int idx = 0;
-        while(true) {
-            if(ans.size() == m * n)
-                break;
-            if(i < m && j < n && i >= 0 && j >= 0 && visited[i][j] != true) {
-                ans.add(matrix[i][j]);
-                visited[i][j] = true;
-                i += directions[idx][0];
-                j += directions[idx][1];
-            } else {
-                i -= directions[idx][0];
-                j -= directions[idx][1];
-                idx = (idx + 1) % 4;
-                i += directions[idx][0];
-                j += directions[idx][1];
-            }   
-        }
+        while(rowStart <= rowEnd && colStart <= colEnd) {
+            for(j = colStart; j <= colEnd; j++) {
+                ans.add(matrix[rowStart][j]);    
+            }
+            rowStart++;
+            
+            for(i = rowStart; i <= rowEnd; i++) {
+                ans.add(matrix[i][colEnd]);    
+            }
+            colEnd--;
+            
+            if(rowStart <= rowEnd) {
+                for(j = colEnd; j >= colStart; j--) {
+                    ans.add(matrix[rowEnd][j]);    
+                }
+            }
+            rowEnd--;
+            
+            if(colStart <= colEnd) {
+                for(i = rowEnd; i >= rowStart; i--) {
+                    ans.add(matrix[i][colStart]);    
+                }
+            }
+            colStart++;    
+            
+        } 
         return ans;
     }
 }
