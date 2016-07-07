@@ -9,27 +9,27 @@ public class Solution {
         int colStart = 0;
         int colEnd = matrix[0].length - 1;
         
-        int i = 0, j = 0;
+        
         while(rowStart <= rowEnd && colStart <= colEnd) {
-            for(j = colStart; j <= colEnd; j++) {
+            for(int j = colStart; j <= colEnd; j++) {
                 ans.add(matrix[rowStart][j]);    
             }
             rowStart++;
             
-            for(i = rowStart; i <= rowEnd; i++) {
+            for(int i = rowStart; i <= rowEnd; i++) {
                 ans.add(matrix[i][colEnd]);    
             }
             colEnd--;
             
             if(rowStart <= rowEnd) {
-                for(j = colEnd; j >= colStart; j--) {
+                for(int j = colEnd; j >= colStart; j--) {
                     ans.add(matrix[rowEnd][j]);    
                 }
             }
             rowEnd--;
             
             if(colStart <= colEnd) {
-                for(i = rowEnd; i >= rowStart; i--) {
+                for(int i = rowEnd; i >= rowStart; i--) {
                     ans.add(matrix[i][colStart]);    
                 }
             }
