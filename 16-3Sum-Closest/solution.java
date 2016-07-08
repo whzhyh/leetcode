@@ -12,7 +12,6 @@ public class Solution {
                 int sum = nums[i] + nums[start] + nums[end];
                 if(Math.abs(sum - target) < Math.abs(min - target)) {
                     min = sum;
-                    System.out.println(sum);
                 }
                 if(sum < target) {
                     start++;
