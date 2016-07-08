@@ -4,9 +4,8 @@ public class Solution {
         if(s.length() == 0)
             return 0;
         int i = s.length() - 1;
-        for(; i >= 0; i--) {
-            if(s.charAt(i) == ' ')
-                break;
+        while(i >=0 && s.charAt(i) != ' ') {
+            i--;
         }
         return s.length() - 1 - i;
     }
