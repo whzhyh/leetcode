@@ -4,6 +4,7 @@ public class Solution {
             return;
         int n = matrix.length;
         
+        // 1. flip the matrix horizontally.
         for(int i = 0; i < n / 2; i++) {
             for(int j = 0; j < n; j++) {
                 int tmp = matrix[i][j];
@@ -12,6 +13,7 @@ public class Solution {
             }
         }
         
+        // 2. flip the matrix by y = x;
         for(int i = 0; i < n; i++) {
             for(int j = i + 1; j < n; j++) {
                 int tmp = matrix[i][j];
@@ -19,7 +21,5 @@ public class Solution {
                 matrix[j][i] = tmp;
             }
         }
-        
-        
     }
 }
