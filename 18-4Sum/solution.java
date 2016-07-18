@@ -1,11 +1,12 @@
 public class Solution {
     public List<List<Integer>> fourSum(int[] nums, int target) {
         List<List<Integer>> ans = new ArrayList<>();
-        List<Integer> tmp = new ArrayList<>();
         Arrays.sort(nums);
+        
         for(int i = 0; i < nums.length; i++) {
             if(i != 0 && nums[i] == nums[i - 1])
                 continue;
+                
             for(int j = i + 1; j < nums.length; j++) {
                 if(j != i + 1 && nums[j] == nums[j - 1])
                     continue;
@@ -23,12 +24,12 @@ public class Solution {
                     }
                         
                     if(sum == target) {
+                        List<Integer> tmp = new ArrayList<Integer>();
                         tmp.add(nums[i]);
                         tmp.add(nums[j]);
                         tmp.add(nums[start]);
                         tmp.add(nums[end]);
-                        ans.add(new ArrayList<Integer>(tmp));
-                        tmp.clear();
+                        ans.add(tmp);
                         start++;
                         end--;
                     } else if(sum > target) {
