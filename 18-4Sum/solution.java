@@ -23,10 +23,10 @@ public class Solution {
                     }
                         
                     if(sum == target) {
-                        int[] a = new int[] {nums[i], nums[j], nums[start], nums[end]};
-                        for(int n : a) {
-                            tmp.add(n);
-                        }
+                        tmp.add(nums[i]);
+                        tmp.add(nums[j]);
+                        tmp.add(nums[start]);
+                        tmp.add(nums[end]);
                         ans.add(new ArrayList<Integer>(tmp));
                         tmp.clear();
                         start++;
