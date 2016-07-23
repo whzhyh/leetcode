@@ -24,8 +24,8 @@ public class Solution {
                     left[j] = 0;
                     cur_left = j + 1;
                 } 
-                    
             }
+    
             for(int j = n - 1; j >= 0; j--) {
                 if(matrix[i][j] == '1')
                     right[j] = Math.min(right[j], cur_right);
