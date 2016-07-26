@@ -1,5 +1,32 @@
 public class Solution {
-    public String minWindow(String s, String t) {
+    // Use Array
+    public String minWindow(String s, String t) { 
+        int[] map = new int[128];
+        for(int i = 0; i < t.length(); i++) {
+            map[t.charAt(i)]++;
+        }
+        int counter = t.length();
+        int i = 0, j = 0;
+        int start = 0;
+        int d = Integer.MAX_VALUE;
+        
+        while(j < s.length()) {
+            if(map[s.charAt(j++)]-- > 0)
+                counter--;
+            while(counter == 0) {
+                if(j - i < d) {
+                    start = i;
+                    d = j - i;
+                }
+                if(map[s.charAt(i++)]++ == 0)
+                    counter++;
+            }
+        }
+        return d == Integer.MAX_VALUE ? "" : s.substring(start, start + d);
+    }
+    
+    // Use Hashtable
+    public String minWindow2(String s, String t) {
         HashMap<Character, Integer> map = new HashMap<>();
         
         for(int i = 0; i < t.length(); i ++) {
@@ -41,6 +68,7 @@ public class Solution {
                 i++;
             }
         }
+        
         return start >= end ? "" : s.substring(start, end);
     }
 }
