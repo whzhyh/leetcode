@@ -30,14 +30,12 @@ public class Solution {
             if(node.left != null) {
                 q.add(node.left);
                 cols.add(col - 1);
-                if(col <= min)
-                    min = col - 1;
+                min = Math.min(col - 1, min);
             }
             if(node.right != null) {
                 q.add(node.right);
                 cols.add(col + 1);
-                if(col >= max)
-                    max = col + 1;
+                max = Math.max(col + 1, max);
             }
         }
         for(int i = min; i <= max; i++) {
