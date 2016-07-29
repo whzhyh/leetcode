@@ -6,8 +6,8 @@ public class Solution {
         TreeSet<Integer> set = new TreeSet<Integer>();
         for(int i = 0; i < nums.length; i++) {
             int n = nums[i];
-            if(set.floor(n) != null && n <= t + set.floor(n) ||
-            set.ceiling(n) != null && set.ceiling(n) <= t + n)
+            if((set.floor(n) != null && n <= t + set.floor(n)) ||
+            (set.ceiling(n) != null && set.ceiling(n) <= t + n))
                 return true;
             set.add(n);
             if(i >= k)
