@@ -25,7 +25,7 @@ public class Solution {
             TreeNode node = stack.pop();
             if(isNext)
                 return node;
-            if(node.val == p.val) {
+            if(node == p) {
                 isNext = true;
             }
             
