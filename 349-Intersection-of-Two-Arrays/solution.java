@@ -49,7 +49,7 @@ public class Solution {
     } 
     
     // HashSet
-    public int[] intersection(int[] nums1, int[] nums2) {
+    public int[] intersection3(int[] nums1, int[] nums2) {
         // Write your code here
         if(nums1 == null || nums2 == null)
             return new int[0];
@@ -72,5 +72,31 @@ public class Solution {
         }
         
         return res;
+    }
+    public int[] intersection(int[] nums1, int[] nums2) {
+        // Write your code here
+        List<Integer> list = new ArrayList<>();
+        if(nums1 == null || nums2 == null || nums1.length == 0 || nums2.length == 0) {
+            return new int[]{ };
+        }
+        HashSet<Integer> set = new HashSet<>();
+        for(int n : nums1) {
+            if(!set.contains(n))
+                set.add(n);
+        }
+        for(int n : nums2) {
+            if(set.contains(n)) {
+                list.add(n);
+                set.remove(n);
+            }
+        }
+        int[] ans = new int[list.size()];
+        int i = 0;
+        for(int n : list) {
+            ans[i] = n;
+            i++;
+        }
+        
+        return ans;
     }
 }
