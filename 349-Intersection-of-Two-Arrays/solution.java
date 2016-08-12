@@ -81,7 +81,7 @@ public class Solution {
         }
         HashSet<Integer> set = new HashSet<>();
         for(int n : nums1) {
-            if(!set.contains(n))
+            // if(!set.contains(n))
                 set.add(n);
         }
         for(int n : nums2) {
