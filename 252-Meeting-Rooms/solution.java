@@ -18,7 +18,7 @@ public class Solution {
         
         Collections.sort(list, new Comparator<List<Integer>>() {
             public int compare(List<Integer> l1, List<Integer> l2) {
-                if(l1.get(0) - l2.get(0) == 0) {
+                if(l1.get(0).equals(l2.get(0))) {
                     return l2.get(1) - l1.get(1);
                 } else {
                     return l1.get(0) - l2.get(0);    
